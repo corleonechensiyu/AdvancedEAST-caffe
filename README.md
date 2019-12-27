@@ -1,4 +1,5 @@
 # AdvancedEAST-caffe
 caffe实现AdvancedEAST 
 ====
-![demo]()
+python demo.py
+![demo](https://github.com/corleonechensiyu/AdvancedEAST-caffe/blob/master/012_pre.jpg)
