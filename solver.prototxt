@@ -1,0 +1,16 @@
+train_net: "mbv3/train.prototxt"
+test_net: "mbv3/train.prototxt"
+test_iter: 500
+test_interval: 999999
+base_lr: 0.001
+display: 20
+max_iter: 200000
+lr_policy: "fixed"
+momentum: 0.9
+snapshot: 200
+snapshot_prefix: "saved_model/mbv3"
+solver_mode: GPU
+test_initialization: false
+average_loss: 20
+momentum2: 0.999
+type: "Adam"
