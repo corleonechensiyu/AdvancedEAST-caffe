@@ -1,6 +1,5 @@
 # add HardSigmoid and HardSwish
-put *.h in include/caffe/layers/
-put *.cpp/*.cu in src/caffe/layers/
+put *.h in include/caffe/layers/ ...put *.cpp/*.cu in src/caffe/layers/
 
     edit caffe.proto
     optional HardSigmoidParameter hardsigmoid_parm =163;
