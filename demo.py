@@ -22,7 +22,7 @@ parser.add_argument('--output_dir', default='results',
                     help='Path to input image for batch demo')                         
 parser.add_argument('--model_def', default='mbv3/deploy.prototxt',
                     help='prototxt file')
-parser.add_argument('--model_weights', default='saved_model/mbv3_iter_117800.caffemodel',
+parser.add_argument('--model_weights', default='saved_model/mbv3_iter_118400.caffemodel',
                     help='caffemodel file')   
 parser.add_argument('--thr',type=float, default=0.9,
                     help='Confidence threshold.')
@@ -156,4 +156,3 @@ Inference_API = args.infer
 
 if __name__ == "__main__":
     single_demo(input, output_dir)
-

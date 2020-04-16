@@ -7,7 +7,7 @@ display: 20
 max_iter: 200000
 lr_policy: "fixed"
 momentum: 0.9
-snapshot: 200
+snapshot: 2000
 snapshot_prefix: "saved_model/mbv3"
 solver_mode: GPU
 test_initialization: false

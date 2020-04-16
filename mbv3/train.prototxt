@@ -286,7 +286,7 @@ layer {
   bottom: "Conv_hswish"
   bottom: "conv_1_linear"
   top: "conv_1"
-} 
+}
 ## ========== conv2 ============
 layer {
   name: "conv_2_pw"
@@ -463,7 +463,7 @@ layer {
     bias_term: true
   }
 }
- ## ========== conv3 ============  
+ ## ========== conv3 ============
 layer {
   name: "conv_3_pw"
   type: "Convolution"
@@ -474,7 +474,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 72  ## 
+    num_output: 72  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -533,11 +533,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 72  ## 
+    num_output: 72  ##
     bias_term: false
     pad: 1
     kernel_size: 3
-    group: 72  ## 
+    group: 72  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -644,7 +644,7 @@ layer {
   bottom: "conv_2_linear"
   bottom: "conv_3_linear"
   top: "conv_3"
-} 
+}
 ## ========== conv4 s=2模板============
 layer {
   name: "conv_4_pw"
@@ -841,7 +841,7 @@ layer {
   bottom: "conv_4_dw_fc2"
   top: "conv_4_dw_fc2_scale"
   scale_param {
-    axis: 0  
+    axis: 0
     bias_term: false  ## 不学习bias，则可以简化为 alpha*x = y
   }
 }
@@ -905,7 +905,7 @@ layer {
     bias_term: true
   }
 }
- ## ========== conv5 s=1模板 ============  
+ ## ========== conv5 s=1模板 ============
 layer {
   name: "conv_5_pw"
   type: "Convolution"
@@ -916,7 +916,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 120  ## 
+    num_output: 120  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -975,11 +975,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 120  ## 
+    num_output: 120  ##
     bias_term: false
     pad: 2
     kernel_size: 5
-    group: 120  ## 
+    group: 120  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -1100,7 +1100,7 @@ layer {
   bottom: "conv_5_dw_fc2"
   top: "conv_5_dw_fc2_scale"
   scale_param {
-    axis: 0  
+    axis: 0
     bias_term: false  ## 不学习bias，则可以简化为 alpha*x = y
   }
 }
@@ -1170,8 +1170,8 @@ layer {
   bottom: "conv_4_linear"
   bottom: "conv_5_linear"
   top: "conv_5"
-} 
- ## ========== conv6 s=1模板 ============  
+}
+ ## ========== conv6 s=1模板 ============
 layer {
   name: "conv_6_pw"
   type: "Convolution"
@@ -1182,7 +1182,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 120  ## 
+    num_output: 120  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -1241,11 +1241,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 120  ## 
+    num_output: 120  ##
     bias_term: false
     pad: 2
     kernel_size: 5
-    group: 120  ## 
+    group: 120  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -1366,7 +1366,7 @@ layer {
   bottom: "conv_6_dw_fc2"
   top: "conv_6_dw_fc2_scale"
   scale_param {
-    axis: 0  
+    axis: 0
     bias_term: false  ## 不学习bias，则可以简化为 alpha*x = y
   }
 }
@@ -1436,7 +1436,7 @@ layer {
   bottom: "conv_5"
   bottom: "conv_6_linear"
   top: "conv_6"
-} 
+}
 ## ========== conv7 s=2模板============
 layer {
   name: "conv_7_pw"
@@ -1448,7 +1448,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 240  ## 
+    num_output: 240  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -1542,7 +1542,7 @@ layer {
   convolution_param {
     num_output: 240  ##
     bias_term: false
-    pad: 1  ## 
+    pad: 1  ##
     kernel_size: 3  ##
     stride: 2  ## s=2
     group: 240  ##
@@ -1679,7 +1679,7 @@ layer {
     bias_term: true
   }
 }
- ## ========== conv8 s=1模板 ============  
+ ## ========== conv8 s=1模板 ============
 layer {
   name: "conv_8_pw"
   type: "Convolution"
@@ -1690,7 +1690,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 200  ## 
+    num_output: 200  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -1782,11 +1782,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 200  ## 
+    num_output: 200  ##
     bias_term: false
     pad: 1
     kernel_size: 3
-    group: 200  ## 
+    group: 200  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -1926,8 +1926,8 @@ layer {
   bottom: "conv_7_linear"
   bottom: "conv_8_linear"
   top: "conv_8"
-} 
- ## ========== conv9 s=1 ============  
+}
+ ## ========== conv9 s=1 ============
 layer {
   name: "conv_9_pw"
   type: "Convolution"
@@ -1938,7 +1938,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 184  ## 
+    num_output: 184  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -2030,11 +2030,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 184  ## 
+    num_output: 184  ##
     bias_term: false
     pad: 1
     kernel_size: 3
-    group: 184  ## 
+    group: 184  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -2174,8 +2174,8 @@ layer {
   bottom: "conv_8"
   bottom: "conv_9_linear"
   top: "conv_9"
-} 
- ## ========== conv10 s=1 ============  
+}
+ ## ========== conv10 s=1 ============
 layer {
   name: "conv_10_pw"
   type: "Convolution"
@@ -2186,7 +2186,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 184  ## 
+    num_output: 184  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -2278,11 +2278,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 184  ## 
+    num_output: 184  ##
     bias_term: false
     pad: 1
     kernel_size: 3
-    group: 184  ## 
+    group: 184  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -2422,8 +2422,8 @@ layer {
   bottom: "conv_9"
   bottom: "conv_10_linear"
   top: "conv_10"
-} 
- ## ========== conv11 s=1 ============  
+}
+ ## ========== conv11 s=1 ============
 layer {
   name: "conv_11_pw"
   type: "Convolution"
@@ -2434,7 +2434,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 480  ## 
+    num_output: 480  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -2526,11 +2526,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 480  ## 
+    num_output: 480  ##
     bias_term: false
-    pad: 1  ## 
-    kernel_size: 3  ## 
-    group: 480  ## 
+    pad: 1  ##
+    kernel_size: 3  ##
+    group: 480  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -2651,7 +2651,7 @@ layer {
   bottom: "conv_11_dw_fc2"
   top: "conv_11_dw_fc2_scale"
   scale_param {
-    axis: 0  
+    axis: 0
     bias_term: false  ## 不学习bias，则可以简化为 alpha*x = y
   }
 }
@@ -2748,7 +2748,7 @@ layer {
     bias_term: true
   }
 }
- ## ========== conv12 s=1 ============  
+ ## ========== conv12 s=1 ============
 layer {
   name: "conv_12_pw"
   type: "Convolution"
@@ -2759,7 +2759,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 672  ## 
+    num_output: 672  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -2851,11 +2851,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 672  ## 
+    num_output: 672  ##
     bias_term: false
-    pad: 1  ## 
-    kernel_size: 3  ## 
-    group: 672  ## 
+    pad: 1  ##
+    kernel_size: 3  ##
+    group: 672  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -2976,7 +2976,7 @@ layer {
   bottom: "conv_12_dw_fc2"
   top: "conv_12_dw_fc2_scale"
   scale_param {
-    axis: 0  
+    axis: 0
     bias_term: false  ## 不学习bias，则可以简化为 alpha*x = y
   }
 }
@@ -3079,7 +3079,7 @@ layer {
   bottom: "conv_11_linear"
   bottom: "conv_12_linear"
   top: "conv_12"
-} 
+}
 ## ========== conv13 s=2 ============
 layer {
   name: "conv_13_pw"
@@ -3091,7 +3091,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 672  ## 
+    num_output: 672  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -3185,7 +3185,7 @@ layer {
   convolution_param {
     num_output: 672  ##
     bias_term: false
-    pad: 2  ## 
+    pad: 2  ##
     kernel_size: 5  ##
     stride: 2  ## s=2
     group: 672  ##
@@ -3309,7 +3309,7 @@ layer {
   bottom: "conv_13_dw_fc2"
   top: "conv_13_dw_fc2_scale"
   scale_param {
-    axis: 0  
+    axis: 0
     bias_term: false  ## 不学习bias，则可以简化为 alpha*x = y
   }
 }
@@ -3406,7 +3406,7 @@ layer {
     bias_term: true
   }
 }
- ## ========== conv14 s=1 ============  
+ ## ========== conv14 s=1 ============
 layer {
   name: "conv_14_pw"
   type: "Convolution"
@@ -3417,7 +3417,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 960  ## 
+    num_output: 960  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -3509,11 +3509,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 960  ## 
+    num_output: 960  ##
     bias_term: false
-    pad: 2  ## 
-    kernel_size: 5  ## 
-    group: 960  ## 
+    pad: 2  ##
+    kernel_size: 5  ##
+    group: 960  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -3634,7 +3634,7 @@ layer {
   bottom: "conv_14_dw_fc2"
   top: "conv_14_dw_fc2_scale"
   scale_param {
-    axis: 0  
+    axis: 0
     bias_term: false  ## 不学习bias，则可以简化为 alpha*x = y
   }
 }
@@ -3737,8 +3737,8 @@ layer {
   bottom: "conv_13_linear"
   bottom: "conv_14_linear"
   top: "conv_14"
-} 
- ## ========== conv15 s=1 ============  
+}
+ ## ========== conv15 s=1 ============
 layer {
   name: "conv_15_pw"
   type: "Convolution"
@@ -3749,7 +3749,7 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 960  ## 
+    num_output: 960  ##
     bias_term: false
     kernel_size: 1
     weight_filler {
@@ -3841,11 +3841,11 @@ layer {
     decay_mult: 1.0
   }
   convolution_param {
-    num_output: 960  ## 
+    num_output: 960  ##
     bias_term: false
-    pad: 2  ## 
-    kernel_size: 5  ## 
-    group: 960  ## 
+    pad: 2  ##
+    kernel_size: 5  ##
+    group: 960  ##
     engine: CAFFE
     weight_filler {
       type: "msra"
@@ -3966,7 +3966,7 @@ layer {
   bottom: "conv_15_dw_fc2"
   top: "conv_15_dw_fc2_scale"
   scale_param {
-    axis: 0  
+    axis: 0
     bias_term: false  ## 不学习bias，则可以简化为 alpha*x = y
   }
 }
@@ -4069,8 +4069,8 @@ layer {
   bottom: "conv_14"
   bottom: "conv_15_linear"
   top: "conv_15"
-} 
-## ========== 16. conv2d 1*1 ============  
+}
+## ========== 16. conv2d 1*1 ============
 layer {
   name: "conv_16"
   type: "Convolution"
@@ -4163,7 +4163,7 @@ layer {
     operation: PROD
   }
 }
-## ========== 17. pool 7*7 ============  
+## ========== 17. pool 7*7 ============
 # layer {
   # name: "pool_17"
   # type: "Pooling"
@@ -4242,21 +4242,21 @@ layer {
   type: "Deconvolution"
   bottom: "merge_1_conv"
   top: "merge_1_up"
-    param { 
-      lr_mult: 0 
+    param {
+      lr_mult: 0
       decay_mult: 0
     }
     convolution_param {
-        num_output: 640 
-        kernel_size: 4 
-        pad: 1 
-        stride: 2 
+        num_output: 640
+        kernel_size: 4
+        pad: 1
+        stride: 2
         group: 640
         weight_filler: {
-          type: "bilinear" 
-        } 
+          type: "bilinear"
+        }
         bias_term: false
-    }  
+    }
 }
 
 layer {
@@ -4334,21 +4334,21 @@ layer {
   type: "Deconvolution"
   bottom: "merge_2_conv"
   top: "merge_2_up"
-    param { 
-      lr_mult: 0 
+    param {
+      lr_mult: 0
       decay_mult: 0
     }
     convolution_param {
-        num_output: 320 
-        kernel_size: 4 
-        pad: 1 
-        stride: 2 
+        num_output: 320
+        kernel_size: 4
+        pad: 1
+        stride: 2
         group: 320
         weight_filler: {
-          type: "bilinear" 
-        } 
+          type: "bilinear"
+        }
         bias_term: false
-    }  
+    }
 }
 
 layer {
@@ -4426,21 +4426,21 @@ layer {
   type: "Deconvolution"
   bottom: "merge_3_conv"
   top: "merge_3_up"
-    param { 
-      lr_mult: 0 
+    param {
+      lr_mult: 0
       decay_mult: 0
     }
     convolution_param {
-        num_output: 160 
-        kernel_size: 4 
-        pad: 1 
-        stride: 2 
+        num_output: 160
+        kernel_size: 4
+        pad: 1
+        stride: 2
         group: 160
         weight_filler: {
-          type: "bilinear" 
-        } 
+          type: "bilinear"
+        }
         bias_term: false
-    }  
+    }
 }
 
 layer {
