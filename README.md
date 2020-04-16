@@ -1,6 +1,6 @@
-# AdvancedEAST-caffe
-
+# AdvancedEAST caffe
 caffe实现AdvancedEAST+moblienetv3
+
 ====
 # 参考 [AdvancedEAST](https://github.com/huoyijie/AdvancedEAST) [EAST-caffe](https://github.com/SURFZJY/EAST-caffe)
 # my pytorch implement [pytorch_AdvancedEast](https://github.com/corleonechensiyu/pytorch_AdvancedEast)
