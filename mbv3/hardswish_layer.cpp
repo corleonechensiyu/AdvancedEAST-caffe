@@ -9,7 +9,7 @@ template <typename Dtype>
 inline Dtype hardswish(Dtype x) {
 //   return 0.5 * tanh(0.5 * x) + 0.5;
     // return std::max(Dtype(0),std::min(Dtype(1),0.2x + 0.5));
-    return x*(std::max(Dtype(0),std::min(Dtype(1),Dtype(0.2)*x +Dtype(0.5))));
+    return x*(std::max(Dtype(0),std::min(Dtype(1),x/Dtype(6.0) +Dtype(0.5))));
 }
 
 template <typename Dtype>
@@ -37,7 +37,7 @@ void HardSwishLayer<Dtype>::Backward_cpu(const vector<Blob<Dtype>*>& top,
     //   const Dtype sigmoid_x = top_data[i];
     //   bottom_diff[i] = top_diff[i] * sigmoid_x * (1. - sigmoid_x);
         // bottom_diff[i] = top_diff[i]*0.2*((bottom_data[i]>-2.5 && bottom_data[i]<2.5));
-        bottom_diff[i] = top_diff[i]*(bottom_data[i]<-2.5 ? 0:(bottom_data[i]>2.5 ? 1:0.4*bottom_data[i]+0.5));
+        bottom_diff[i] = top_diff[i]*(bottom_data[i]<-3.0 ? 0:(bottom_data[i]>3.0 ? 1.0:bottom_data[i]/3.0+0.5));
     }
   }
 }
