@@ -9,7 +9,8 @@ __global__ void HardSwishForward(const int n, const Dtype* in, Dtype* out) {
   CUDA_KERNEL_LOOP(index, n) {
     //out[index] = 0.5 * tanh(0.5 * in[index]) + 0.5;
     //out[index] = in[index] < -2.5 ? 0:(in[index] > 2.5 ? 1:in[index]*0.2 + 0.5);
-    out[index] = in[index]*(in[index] < -2.5 ? 0:(in[index] > 2.5 ? 1:in[index]*0.2 + 0.5));
+    //out[index] = in[index]*(in[index] < -2.5 ? 0:(in[index] > 2.5 ? 1:in[index]*0.2 + 0.5));
+    out[index] = in[index] <-3.0 ? 0 :(in[index] >3.0 ? in[index] : in[index]*(in[index]/6 + 0.5));
   }
 }
 
@@ -37,7 +38,8 @@ __global__ void HardSwishBackward(const int n, const Dtype* in_diff,
     //const Dtype sigmoid_x = out_data[index];
     //out_diff[index] = in_diff[index] * sigmoid_x * (1 - sigmoid_x);
     //out_diff[index] = in_diff[index]* 0.2 *((in_data[index]>-2.5) && (in_data[index]<2.5));
-    out_diff[index] = in_diff[index] * (in_data[index]<-2.5 ? 0:(in_data[index]>2.5 ? 1:0.4*in_data[index]+0.5));
+    //out_diff[index] = in_diff[index] * (in_data[index]<-2.5 ? 0:(in_data[index]>2.5 ? 1:0.4*in_data[index]+0.5));
+    out_diff[index] = in_diff[index] * (in_data[index]<-3.0 ? 0:(in_data[index]>3.0 ? 1:in_data[index]/3+0.5));
   }
 }
 
